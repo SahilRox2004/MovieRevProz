@@ -944,12 +944,11 @@ textarea#review-text {
     const nextBtn = document.getElementById('nextBtn');
 
     function fetchAndDisplaySimilarMovies(movieId, container) {
-  // Fetch similar movies from TMDb API
+ 
   fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${apiKey}`)
     .then(response => response.json())
     .then(data => {
-      const similarMovies = data.results.slice(0, 6); // Get top 6 similar movies
-      
+      const similarMovies = data.results.slice(0, 6);
       if (similarMovies.length > 0) {
         const similarMoviesHTML = `
           <div class="details-section">
